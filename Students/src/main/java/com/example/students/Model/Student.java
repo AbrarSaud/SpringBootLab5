@@ -8,8 +8,8 @@ import lombok.Data;
 @AllArgsConstructor
 public class Student {
     private int id;
-    public String name;
-    public int age;
-    public Student degree;
-    public  int gpa;
+    private String name;
+    private int age;
+    private Student degree;
+    private  double gpa;
 }
