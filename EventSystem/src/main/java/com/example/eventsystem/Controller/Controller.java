@@ -22,7 +22,7 @@ public class Controller {
     @PostMapping("/add")
     public ApiResponse addEvent(@RequestBody Event event) {
         events.add(event);
-        return new ApiResponse("");
+        return new ApiResponse("added successfully!!");
     }
 
     // Update a event
@@ -55,7 +55,7 @@ public class Controller {
     }
 
     // Change capacity
-    @PutMapping("/change/{id}/{capacity}")
+    @PutMapping("/change/{id}")
     public ApiResponse changeCapacity(@PathVariable int id, @RequestParam int capacity) {
         for (Event e : events) {
             if (e.getId() == id) {
@@ -68,7 +68,7 @@ public class Controller {
 
 
     // Search for a event by given id
-    @GetMapping("/getById")
+    @GetMapping("/getById/{id}")
     public ArrayList<Event> searchById(@PathVariable int id) {
         for (Event e : events) {
             if (e.getId() == id) {
